@@ -6,7 +6,15 @@ end
 
 # Autocomplete
 require 'irb/completion'
-require 'redgreen'
+
+%w[rubygems looksee/shortcuts wirble redgreen].each do |gem|
+	begin
+		require gem
+	rescue LoadError
+	end
+end
+
+
 # Prompt behavior
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
