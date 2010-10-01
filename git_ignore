@@ -1,0 +1,8 @@
+.*.swp
+tags
+.swo
+*.elc
+jferris-*.gemspec
+*.scratch.*
+nbproject
+
