@@ -29,11 +29,11 @@ function precmd() {
   rvm_use=$(rvm info|egrep -C 1 'homes'|grep 'gem'|cut -d\: -f 2|cut -d\" -f 2 )
 
   if [[ $rvm_use =~ 'not set' ]]; then
-    ifrvm_flag='system'
+    rvm_flag='system'
   else
-    ifrvm_flag=$rvm_use[(ws:/:)-1]
+    rvm_flag=$rvm_use[(ws:/:)-1]
   fi
-  RPROMPT='$PR_RED$ifrvm_flag$PR_NO_COLOUR'
+  RPROMPT='$PR_RED$rvm_flag$PR_NO_COLOUR'
   if [[ $head_info =~ '^refs*' ]]; then
     branch_name=$head_info[(ws:/:)-1]
     output=$(git diff-files --exit-code --quiet)
