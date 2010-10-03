@@ -25,20 +25,26 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
 
 function precmd() {
-    head_info=$(git symbolic-ref HEAD 2> /dev/null)
-		#ruby_info=$(ruby -v 2> /dev/null)
-		ruby_info=""
-    if [[ $head_info =~ '^refs*' ]]; then
-	branch_name=$head_info[(ws:/:)-1]
-	output=$(git diff-files --exit-code --quiet)
-	if [[ $? == 0 ]]; then
-	    PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_CYAN>$PR_NO_COLOUR '
-	else
-	    PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_MAGENTA*$PR_NO_COLOUR '
-	fi
+  head_info=$(git symbolic-ref HEAD 2> /dev/null)
+  rvm_use=$(rvm info|egrep -C 1 'homes'|grep 'gem'|cut -d\: -f 2|cut -d\" -f 2 )
+
+  if [[ $rvm_use =~ 'not set' ]]; then
+    ifrvm_flag='system'
+  else
+    ifrvm_flag=$rvm_use[(ws:/:)-1]
+  fi
+  RPROMPT='$PR_RED$ifrvm_flag$PR_NO_COLOUR'
+  if [[ $head_info =~ '^refs*' ]]; then
+    branch_name=$head_info[(ws:/:)-1]
+    output=$(git diff-files --exit-code --quiet)
+    if [[ $? == 0 ]]; then
+      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_CYAN>$PR_NO_COLOUR '
     else
-	PROMPT='%2~~>'
+      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_MAGENTA*$PR_NO_COLOUR '
     fi
+  else
+    PROMPT='%2~~>'
+  fi
 }
 
 #history stuff
@@ -141,4 +147,7 @@ alias rss='ruby script/server'
 alias start_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM start"
 alias stop_mysql="/Library/StartupItems/MySQLCOM/MySQLCOM stop"
 
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
