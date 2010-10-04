@@ -77,6 +77,11 @@ task :gb do
 	system("git rebase origin/#{branch_name}")
 end
 
+desc "Open merge tool with vimdiff"
+task :gmt do
+	system("git mergetool -t vimdiff")
+end
+
 desc "Merge remote of current with current branch"
 task :gm do
   branch_name = @git_help.current_branch
@@ -115,20 +120,6 @@ task :gct do
   else
     system("git checkout --track -b #{branch_name} origin/#{branch_name}")
   end
-end
-
-desc "Update all Solaro related repos"
-task :slu do
-  solaro_dir = File.join(ENV['HOME'],'checkout','solaro')
-  cd(solaro_dir) { system("git fetch") }
-  securo_admin_dir = File.join(ENV['HOME'],'checkout','securo_admin')
-  cd(securo_admin_dir) { system("git fetch") }
-  payment_dir = File.join(ENV['HOME'],'checkout','securo_payment_middleware')
-  cd(payment_dir) { system("git fetch") }
-  solaro_revision_dir = File.join(ENV['HOME'],'solaro_revision')
-  cd(solaro_revision_dir) { system("git fetch") }
-  gitosis_dir = File.join(ENV['HOME'],'gitosis-admin')
-  cd(gitosis_dir) { system("git fetch") }
 end
 
 desc "Globally available task list"
