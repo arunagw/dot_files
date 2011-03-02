@@ -24,8 +24,8 @@
   bra = branch -a
 
 [user]
-	name = Hemant Kumar
-	email = gethemant@gmail.com
+	name = Arun Agrawal
+	email = arun@fromjaipur.com
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = false
