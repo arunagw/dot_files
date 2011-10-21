@@ -4,7 +4,9 @@ require "rake"
 require "rake/tasklib"
 require "colored"
 require "fileutils"
-require "mysql"
+#require 'mysql'
+#require 'jdbc-mysql'
+
 
 class Object
   def blank?
