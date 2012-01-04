@@ -150,7 +150,7 @@ export EDITOR="vim"
 
 #export PATH=/opt/ree/bin:/opt/git/bin:/opt/local/bin:/opt/local/sbin:$HOME/bin:$PATH
 
-export PATH=/opt/ree/bin:/usr/local/bin:$HOME/bin:$PATH
+export PATH=/usr/local/bin:$HOME/bin:$PATH
 alias ru='ps -ef | grep ruby'
 
 export CC=/usr/bin/gcc-4.2
@@ -169,7 +169,6 @@ export TNS_ADMIN="/usr/local/oracle/network/admin"
 export NLS_LANG="AMERICAN_AMERICA.UTF8"
 export PATH=$PATH:$DYLD_LIBRARY_PATH
 
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/Cellar/mysql/5.1.55/lib"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
