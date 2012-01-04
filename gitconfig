@@ -25,7 +25,7 @@
 
 [user]
 	name = Arun Agrawal
-	email = arun@fromjaipur.com
+	email = arunagw@gmail.com
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = false
