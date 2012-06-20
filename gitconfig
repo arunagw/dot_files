@@ -22,6 +22,7 @@
   st = status
   out = log origin..HEAD
   bra = branch -a
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [user]
 	name = Arun Agrawal
