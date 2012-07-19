@@ -5,4 +5,8 @@ tags
 jferris-*.gemspec
 *.scratch.*
 nbproject
-
+.idea
+vendor/bundle
+.rbx
+.DS_Store
+bundle
