@@ -153,8 +153,8 @@ export EDITOR="vim"
 export PATH=/usr/local/bin:$HOME/bin:$PATH
 alias ru='ps -ef | grep ruby'
 
-export CC=/usr/bin/gcc-4.2
-export LC_CTYPE=en_US.UTF-8 export LC_ALL=en_US.UTF-8
+#export CC=/usr/bin/gcc-4.2
+#export LC_CTYPE=en_US.UTF-8 export LC_ALL=en_US.UTF-8
 
 
 #export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/Cellar/mysql/5.1.55/lib"
