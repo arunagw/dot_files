@@ -177,3 +177,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export TORQUEBOX_HOME=/opt/torquebox
 export JBOSS_HOME=$TORQUEBOX_HOME/jboss
+
+
+export CPPFLAGS=-I/opt/X11/include
