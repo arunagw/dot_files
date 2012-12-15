@@ -26,21 +26,10 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
 function precmd() {
   head_info=$(git symbolic-ref HEAD 2> /dev/null)
-  # rvm_use=$(rvm info|egrep -C 1 'homes'|grep 'gem'|cut -d\: -f 2|cut -d\" -f 2 )
-  # 
-  # if [[ $rvm_use =~ 'not set' ]]; then
-  #   rvm_flag='system'
-  # else
-  #   rvm_flag=$rvm_use[(ws:/:)-1]
-  # fi
 
   rvm_prompt_info=$(~/.rvm/bin/rvm-prompt 2> /dev/null)
   
-  # if [[ $rvm_prompt_info =~ ' ' ]]; then
-  #   rvm_flag='system'
-  # else
-    rvm_flag=$rvm_prompt_info
-  # fi
+  rvm_flag=$rvm_prompt_info
   
   RPROMPT='$PR_RED$rvm_flag$PR_NO_COLOUR'
   if [[ $head_info =~ '^refs*' ]]; then
@@ -178,5 +167,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export TORQUEBOX_HOME=/opt/torquebox
 export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
-
-export CPPFLAGS=-I/opt/X11/include
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export RBENV_ROOT=/usr/local/opt/rbenv
+eval "$(rbenv init -)"
+#export CPPFLAGS=-I/opt/X11/include
