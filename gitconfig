@@ -22,7 +22,9 @@
   st = status
   out = log origin..HEAD
   bra = branch -a
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	switch = !legit switch \"$@\"
 	branches = !legit branches
 	sprout = !legit sprout \"$@\"
