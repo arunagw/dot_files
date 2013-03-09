@@ -123,6 +123,7 @@ alias gf="git fetch"
 alias s="sake"
 alias be="bundle exec"
 
+alias bu='brew update && brew upgrade && brew cleanup'
 alias psr="ps axu|grep ruby"
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
