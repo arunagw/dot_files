@@ -16,6 +16,7 @@ set expandtab
 " more.
 runtime macros/matchit.vim
 
+source ~/.vim/ack.vim
 source ~/.vim/vundle.vim
 source ~/.vim/options.vim
 source ~/.vim/mapping.vim
