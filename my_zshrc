@@ -154,8 +154,8 @@ alias ru='ps -ef | grep ruby'
 
 
 
-export TORQUEBOX_HOME=/opt/torquebox
-export JBOSS_HOME=$TORQUEBOX_HOME/jboss
+#export TORQUEBOX_HOME=/opt/torquebox
+#export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export RBENV_ROOT=/usr/local/opt/rbenv

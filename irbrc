@@ -1,20 +1,3 @@
-# print SQL to STDOUT
-if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
-  require 'logger'
-  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
-end
-
-# Autocomplete
-require 'irb/completion'
-
-%w[rubygems looksee/shortcuts wirble redgreen].each do |gem|
-	begin
-		require gem
-	rescue LoadError
-	end
-end
-
-
 # Prompt behavior
 ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
@@ -30,8 +13,16 @@ class Object
   end
 end
 
-# copy a string to the clipboard
-def pbcopy(string)
-  `echo "#{string}" | pbcopy`
-  string
+
+require 'rubygems'
+require 'pp'
+
+IRB.conf[:AUTO_INDENT] = true
+
+def require_rb_files_from(dir)
+  Dir.glob(File.join(dir, '*.rb')) do |file|
+    require file
+  end
 end
+
+require_rb_files_from(File.join(ENV['HOME'], '.irbrc.d'))
