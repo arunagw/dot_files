@@ -27,11 +27,11 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 function precmd() {
   head_info=$(git symbolic-ref HEAD 2> /dev/null)
 
-  rbenv_prompt_info=$(rbenv version-name)
+  rvm_prompt_info=$(~/.rvm/bin/rvm-prompt 2> /dev/null)
   
-  rbenv_flag=$rbenv_prompt_info
+  rvm_flag=$rvm_prompt_info
   
-  RPROMPT='$PR_RED$rbenv_flag$PR_NO_COLOUR'
+  RPROMPT='$PR_RED$rvm_flag$PR_NO_COLOUR'
   if [[ $head_info =~ '^refs*' ]]; then
     branch_name=$head_info[(ws:/:)-1]
     output=$(git diff-files --exit-code --quiet)
@@ -156,7 +156,3 @@ alias ru='ps -ef | grep ruby'
 
 #export TORQUEBOX_HOME=/opt/torquebox
 #export JBOSS_HOME=$TORQUEBOX_HOME/jboss
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export RBENV_ROOT=/usr/local/opt/rbenv
-eval "$(rbenv init -)"
