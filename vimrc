@@ -29,6 +29,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nanki/treetop.vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-bundler'
@@ -134,6 +135,10 @@ au BufRead,BufNewFile *.md setlocal spell
 
 " Automatically wrap at 80 characters for Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80
+
+
+map <leader>n :NERDTreeToggle<CR>
+
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
