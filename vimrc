@@ -1,4 +1,3 @@
-
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
@@ -44,6 +43,7 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
+Bundle 'mileszs/ack.vim'
 
 filetype plugin indent on
 
