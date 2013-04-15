@@ -23,6 +23,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'croaky/vim-colors-github'
 Bundle 'danro/rename.vim'
 Bundle 'kchmck/vim-coffee-script'
@@ -79,13 +80,18 @@ if executable("ag")
 endif
 
 " Color scheme
-colorscheme vividchalk
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+syntax enable
+set background=light
+colorscheme solarized
+
+
+
 
 " Numbers
 set number
 set numberwidth=5
+
+set wildmode=longest,list
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
@@ -118,11 +124,6 @@ autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=rou
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -136,9 +137,11 @@ au BufRead,BufNewFile *.md setlocal spell
 " Automatically wrap at 80 characters for Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
+" Auto save file when lost focus from the file
+autocmd BufLeave,FocusLost * silent! wall
 
+" NERDTree for projects
 map <leader>n :NERDTreeToggle<CR>
-
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
