@@ -80,10 +80,11 @@ if executable("ag")
 endif
 
 " Color scheme
-syntax enable
-set background=light
-colorscheme solarized
-
+if has("gui_running")
+  syntax enable
+  set background=light
+  colorscheme solarized
+endif
 
 
 
