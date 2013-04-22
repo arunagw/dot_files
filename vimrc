@@ -7,7 +7,7 @@ set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
-
+set hidden
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -45,6 +45,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
+Bundle 'vim-scripts/LustyExplorer'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 
