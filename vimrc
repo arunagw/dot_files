@@ -28,6 +28,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
+Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'croaky/vim-colors-github'
 Bundle 'danro/rename.vim'
@@ -91,7 +92,7 @@ endif
 " Color scheme
 if has("gui_running")
   syntax enable
-  set background=light
+"  set background=light
   colorscheme solarized
 endif
 
@@ -137,6 +138,10 @@ nnoremap <leader><leader> <c-^>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
+
+" Git Gutter
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_eager = 0
 
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown
