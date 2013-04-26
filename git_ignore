@@ -2,7 +2,6 @@
 tags
 .swo
 *.elc
-jferris-*.gemspec
 *.scratch.*
 nbproject
 .idea

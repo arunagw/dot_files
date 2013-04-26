@@ -37,6 +37,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
 Bundle 'nanki/treetop.vim'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplcache'
@@ -59,6 +60,7 @@ Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 
 filetype plugin indent on
+filetype plugin on
 
 augroup vimrcEx
   au!
