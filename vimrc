@@ -95,7 +95,7 @@ endif
 if has("gui_running")
   syntax enable
 "  set background=light
-  colorscheme solarized
+  colorscheme github
 endif
 
 
@@ -142,7 +142,6 @@ nnoremap <leader><leader> <c-^>
 let g:html_indent_tags = 'li\|p'
 
 " Git Gutter
-let g:gitgutter_highlight_lines = 1
 let g:gitgutter_eager = 0
 
 " Markdown files end in .md
