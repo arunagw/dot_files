@@ -41,6 +41,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/neocomplcache'
+Bundle 'shemerey/vim-peepopen'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-bundler'
@@ -58,6 +59,7 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/LustyExplorer'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
+Bundle 'zeis/vim-kolor'
 
 filetype plugin indent on
 filetype plugin on
