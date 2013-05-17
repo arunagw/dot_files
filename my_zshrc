@@ -136,7 +136,8 @@ alias sca="cd ~/projects/securo_admin/"
 alias ls="ls -G"
 export EDITOR="vim"
 
-
+# Happy open-ssl thingy
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 export PATH=/usr/local/bin:$HOME/bin:$PATH
 alias ru='ps -ef | grep ruby'
