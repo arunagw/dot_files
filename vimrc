@@ -60,6 +60,7 @@ Bundle 'vim-scripts/LustyExplorer'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'zeis/vim-kolor'
+Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 
 filetype plugin indent on
 filetype plugin on
