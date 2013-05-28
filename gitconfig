@@ -41,4 +41,3 @@
 	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = false
 [heroku]
-	account = arunagw

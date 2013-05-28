@@ -8,3 +8,4 @@ nbproject
 vendor/bundle
 .rbx
 .DS_Store
+.powenv
