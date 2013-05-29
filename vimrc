@@ -31,12 +31,16 @@ Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'croaky/vim-colors-github'
+Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 Bundle 'danro/rename.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nanki/treetop.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -60,7 +64,6 @@ Bundle 'vim-scripts/LustyExplorer'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'zeis/vim-kolor'
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 
 filetype plugin indent on
 filetype plugin on
@@ -93,14 +96,6 @@ set list listchars=tab:»·,trail:·
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-" Color scheme
-if has("gui_running")
-  syntax enable
-"  set background=light
-  colorscheme github
-endif
-
 
 
 " Numbers
@@ -140,6 +135,8 @@ autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=rou
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Open browser after creating a gist
+let g:gist_open_browser_after_post = 1
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -161,6 +158,14 @@ autocmd BufLeave,FocusLost * silent! wall
 
 " NERDTree for projects
 map <leader>n :NERDTreeToggle<CR>
+
+" Fix the difficult-to-read default setting for diff text highlighting.  The
+" " bang (!) is required since we are overwriting the DiffText setting. The
+" highlighting
+" " for "Todo" also looks nice (yellow) if you don't like the "MatchParen"
+" colors.
+highlight! link DiffText MatchParen
+
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

@@ -3,14 +3,14 @@
 
 # DO NOT EDIT BELOW THIS LINE
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
+  excludesfile = ~/.gitignore
+  editor = vim
 [alias]
-  ci = commit        
+  ci = commit
   co = checkout
   c = commit -m
   a = add
@@ -25,19 +25,24 @@
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
+  switch = !legit switch \"$@\"
+  branches = !legit branches
+  sprout = !legit sprout \"$@\"
+  unpublish = !legit unpublish \"$@\"
+  harvest = !legit harvest \"$@\"
+  sync = !legit sync \"$@\"
+  publish = !legit publish \"$@\"
+  graft = !legit graft \"$@\"
 
 [user]
-	name = Arun Agrawal
-	email = arunagw@gmail.com
+  name = Arun Agrawal
+  email = arunagw@gmail.com
 [mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = false
+  cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+  trustExitCode = false
+[github]
+  user = arunagw
 [heroku]
+  account = arunagw
+[mergetool]
+  keepBackup = true

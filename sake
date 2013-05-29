@@ -17,7 +17,7 @@ class Object
   def present?
     !blank?
   end
-  
+
   def presence
     self if present?
   end
@@ -74,14 +74,14 @@ end
 
 desc "Rebase current branch"
 task :gb do
-	branch_name = @git_help.current_branch
-	puts "Rebasing branch #{branch_name}"
-	system("git rebase origin/#{branch_name}")
+  branch_name = @git_help.current_branch
+  puts "Rebasing branch #{branch_name}"
+  system("git rebase origin/#{branch_name}")
 end
 
 desc "Open merge tool with vimdiff"
 task :gmt do
-	system("git mergetool -t vimdiff")
+  system("git mergetool -t vimdiff")
 end
 
 desc "Merge remote of current with current branch"
@@ -108,12 +108,6 @@ task :grst do
   system("git reset --hard HEAD")
 end
 
-desc "Clone code from one of the CRRC repos"
-task :gcs do
-  project_name = ENV['project']
-  system("git clone git@code.crrc.ca:#{project_name}.git")
-end
-
 desc "Creating a tracking local branch"
 task :gct do
   branch_name = ENV['branch']
@@ -127,16 +121,7 @@ end
 desc "Globally available task list"
 task :default do
   Rake.application.tasks.each do |task|
-    puts sprintf("%-25s : %s",task.name.bold.red,task.comment.blue)
-  end
-end
-
-desc "Update solaro"
-task :sl do
-  solaro_dir = File.join(ENV['HOME'],'checkout','solaro')
-  cd(solaro_dir) do 
-    system("git fetch")
-    Rake.application.invoke_task("gm")
+    puts sprintf("%-25s : %s", task.name.bold.red, task.comment.blue)
   end
 end
 
@@ -155,11 +140,6 @@ task :dbt do
   end
 end
 
-desc "Run ruby"
-task :run_ruby do
-  ruby "~/checkout/solaro/sandbox/benchmark_find_select.rb"
-end
-
 module Sake
   class Git
     def current_branch
@@ -172,7 +152,7 @@ module Sake
     def truncate_db(db,username = 'root',password = '', host = 'localhost')
       puts "Truncating Database :  ".bold + db.red.bold
       puts "** Press enter to continue **".green.bold
-      
+
       STDIN.getc
       connection = Mysql.connect(host,username,password,db)
       result = connection.real_query("show tables")
@@ -190,7 +170,3 @@ end
 @git_help = Sake::Git.new()
 
 Rake.application.top_level()
-
-
-
-

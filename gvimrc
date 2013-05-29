@@ -1,6 +1,11 @@
 " No audible bell
 set vb
 
+" Color scheme
+syntax enable
+"  set background=light
+colorscheme github
+
 " No toolbar
 set guioptions-=T
 
