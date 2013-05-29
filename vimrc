@@ -135,6 +135,9 @@ autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=rou
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Keep all gist by default private
+let g:gist_post_private = 1
+
 " Open browser after creating a gist
 let g:gist_open_browser_after_post = 1
 
