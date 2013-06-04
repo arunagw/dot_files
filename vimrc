@@ -41,6 +41,8 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nanki/treetop.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -168,7 +170,6 @@ map <leader>n :NERDTreeToggle<CR>
 " " for "Todo" also looks nice (yellow) if you don't like the "MatchParen"
 " colors.
 highlight! link DiffText MatchParen
-
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

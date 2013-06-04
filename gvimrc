@@ -4,7 +4,7 @@ set vb
 " Color scheme
 syntax enable
 "  set background=light
-colorscheme github
+colorscheme Laravel
 
 " No toolbar
 set guioptions-=T
