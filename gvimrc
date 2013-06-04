@@ -4,7 +4,7 @@ set vb
 " Color scheme
 syntax enable
 "  set background=light
-colorscheme Laravel
+colorscheme railscasts
 
 " No toolbar
 set guioptions-=T
