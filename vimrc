@@ -33,6 +33,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'croaky/vim-colors-github'
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 Bundle 'danro/rename.vim'
+Bundle 'itspriddle/vim-marked'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
