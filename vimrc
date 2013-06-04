@@ -165,6 +165,9 @@ autocmd BufLeave,FocusLost * silent! wall
 " NERDTree for projects
 map <leader>n :NERDTreeToggle<CR>
 
+" Open MarkedApp
+map <leader>m :MarkedOpen<CR>
+
 " Fix the difficult-to-read default setting for diff text highlighting.  The
 " " bang (!) is required since we are overwriting the DiffText setting. The
 " highlighting
