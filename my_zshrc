@@ -155,3 +155,5 @@ alias ru='ps -ef | grep ruby'
 
 #export TORQUEBOX_HOME=/opt/torquebox
 #export JBOSS_HOME=$TORQUEBOX_HOME/jboss
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
