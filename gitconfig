@@ -35,8 +35,8 @@
   graft = !legit graft \"$@\"
 
 [user]
-  name = Arun Agrawal
-  email = arunagw@gmail.com
+	name = Arun Agrawal
+	email = arunagw@gmail.com
 [mergetool "diffmerge"]
   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
   trustExitCode = false
