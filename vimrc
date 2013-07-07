@@ -154,6 +154,9 @@ let g:html_indent_tags = 'li\|p'
 " Git Gutter
 let g:gitgutter_eager = 0
 
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown
 
@@ -165,6 +168,10 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Auto save file when lost focus from the file
 autocmd BufLeave,FocusLost * silent! wall
+
+" Numbers.vim
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 
 " NERDTree for projects
 map <leader>n :NERDTreeToggle<CR>
