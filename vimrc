@@ -28,31 +28,32 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
+Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle "myusuf3/numbers.vim"
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Shougo/neocomplcache'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'croaky/vim-colors-github'
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle 'croaky/vim-colors-github'
 Bundle 'danro/rename.vim'
 Bundle 'itspriddle/vim-marked'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
-Bundle "myusuf3/numbers.vim"
 Bundle 'nanki/treetop.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/neocomplcache'
 Bundle 'shemerey/vim-peepopen'
 Bundle 'spolu/dwm.vim'
+Bundle 'thoughtbot/vim-magictags'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-bundler'
@@ -65,9 +66,9 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/LustyExplorer'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
-Bundle 'vim-scripts/LustyExplorer'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
 Bundle 'zeis/vim-kolor'
@@ -185,6 +186,12 @@ map <leader>m :MarkedOpen<CR>
 " " for "Todo" also looks nice (yellow) if you don't like the "MatchParen"
 " colors.
 highlight! link DiffText MatchParen
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

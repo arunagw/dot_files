@@ -105,6 +105,7 @@ fi
 #end of completion related stuff
 
 # Aliases
+alias todo='mvim /Users/arunagw/Dropbox-personal/Dropbox/todo.txt'
 alias g='git'
 alias gst='git status'
 alias gl='git pull'
@@ -124,6 +125,7 @@ alias s="sake"
 alias be="bundle exec"
 
 alias a='ls -lart'
+alias v='mvim .'
 alias bu='brew update && brew upgrade && brew cleanup'
 alias psr="ps axu|grep ruby"
 alias ..2="cd ../.."
@@ -140,6 +142,7 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH
 alias ru='ps -ef | grep ruby'
 
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 #export JRUBY_OPTS=--1.9
 
