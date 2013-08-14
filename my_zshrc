@@ -1,7 +1,16 @@
 setopt correct
 
-# Use Emacs keybinds
-bindkey -e
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -v
+bindkey -M vicmd v edit-command-line
+
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
 
 PS1='%2~> '
 
@@ -13,7 +22,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=")"             # At the very end of the prompt
 
 autoload colors zsh/terminfo
     if [[ "$terminfo[colors]" -ge 8 ]]; then
-	colors
+      colors
     fi
 
 for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
@@ -28,9 +37,9 @@ function precmd() {
   head_info=$(git symbolic-ref HEAD 2> /dev/null)
 
   rvm_prompt_info=$(~/.rvm/bin/rvm-prompt 2> /dev/null)
-  
+
   rvm_flag=$rvm_prompt_info
-  
+
   RPROMPT='$PR_RED$rvm_flag$PR_NO_COLOUR'
   if [[ $head_info =~ '^refs*' ]]; then
     branch_name=$head_info[(ws:/:)-1]

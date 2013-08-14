@@ -6,8 +6,12 @@ set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
+set hlsearch
+set ignorecase
+set smartcase
 set laststatus=2  " Always display the status line
 set hidden
+set scrolloff=5
 
 " To load proper ruby
 set shell=/bin/sh
@@ -53,7 +57,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'shemerey/vim-peepopen'
 Bundle 'spolu/dwm.vim'
-Bundle 'thoughtbot/vim-magictags'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'timcharper/textile.vim'
 Bundle 'tpope/vim-bundler'
