@@ -157,6 +157,7 @@ let g:html_indent_tags = 'li\|p'
 
 " Git Gutter
 let g:gitgutter_eager = 0
+let g:gitgutter_realtime = 0
 
 " neocomplcache
 " let g:neocomplcache_enable_at_startup = 1

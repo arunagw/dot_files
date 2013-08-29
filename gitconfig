@@ -63,3 +63,5 @@
   account = arunagw
 [mergetool]
   keepBackup = true
+[help]
+	autocorrect = 1
