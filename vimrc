@@ -118,6 +118,9 @@ set wildmode=longest,list
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
 
+"checking on (set spell)
+set complete+=kspell
+
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
@@ -174,6 +177,10 @@ au BufRead,BufNewFile *.md setlocal textwidth=80
 " Auto save file when lost focus from the file
 autocmd BufLeave,FocusLost * silent! wall
 
+" completion for Markdown and git commit
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
+
 " Numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
@@ -190,6 +197,10 @@ map <leader>m :MarkedOpen<CR>
 " " for "Todo" also looks nice (yellow) if you don't like the "MatchParen"
 " colors.
 highlight! link DiffText MatchParen
+
+" More indent for html.erb
+"
+let g:html_indent_tags += '\|article\|aside\|audio\|bdi\|canvas\|command\|datalist\|details\|figcaption\|figure\|footer\|header\|hgroup\|mark\|meter\|nav\|output\|progress\|rp\|rt\|ruby\|section\|summary\|time\|video'
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
