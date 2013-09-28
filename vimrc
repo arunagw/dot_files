@@ -115,6 +115,11 @@ set numberwidth=5
 
 set wildmode=longest,list
 
+" Splits
+set splitbelow
+set splitright
+
+
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
 
@@ -212,3 +217,9 @@ nnoremap <Down> :echoe "Use j"<CR>
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
