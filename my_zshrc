@@ -17,7 +17,7 @@ PS1='%2~> '
 setopt prompt_subst
 
 # git theming default: Variables for theming the git info prompt
-ZSH_THEME_GIT_PROMPT_PREFIX="git:("         # Prefix at the very beginning of the prompt, before the branch name
+ZSH_THEME_GIT_PROMPT_PREFIX="("         # Prefix at the very beginning of the prompt, before the branch name
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"             # At the very end of the prompt
 
 autoload colors zsh/terminfo
@@ -31,7 +31,6 @@ for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
     (( count = $count + 1 ))
 done
 PR_NO_COLOUR="%{$terminfo[sgr0]%}"
-
 
 function precmd() {
   head_info=$(git symbolic-ref HEAD 2> /dev/null)
@@ -114,7 +113,6 @@ fi
 #end of completion related stuff
 
 # Aliases
-alias todo='mvim /Users/arunagw/Dropbox-personal/Dropbox/todo.txt'
 alias g='git'
 alias gst='git status'
 alias gl='git pull'
@@ -126,12 +124,15 @@ alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gb='git branch'
 alias gba='git branch -a'
-alias gcount='git shortlog -sn'
+alias gcount='git shortlog --summary --numbered --all | cat -n'
 alias gcp='git cherry-pick'
 alias grst='git reset --hard HEAD'
 alias gf="git fetch"
 alias s="sake"
 alias be="bundle exec"
+
+alias todo='mvim /Users/arunagw/Dropbox-personal/Dropbox/todo.txt'
+alias ip="curl http://wtfismyip.com/json"
 
 alias a='ls -lart'
 alias v='mvim .'
@@ -161,9 +162,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #export TNS_ADMIN="/usr/local/oracle/network/admin"
 #export NLS_LANG="AMERICAN_AMERICA.UTF8"
 #export PATH=$PATH:$DYLD_LIBRARY_PATH
-
-
-
 
 #export TORQUEBOX_HOME=/opt/torquebox
 #export JBOSS_HOME=$TORQUEBOX_HOME/jboss
