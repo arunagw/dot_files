@@ -76,6 +76,8 @@ setopt always_to_end
 
 unsetopt flowcontrol
 
+unsetopt nomatch
+
 WORDCHARS=''
 
 autoload -U compinit
@@ -166,6 +168,5 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #export TORQUEBOX_HOME=/opt/torquebox
 #export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
-eval "$(hub alias -s)"
-
+eval "$(gh alias -s)"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

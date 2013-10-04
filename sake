@@ -2,7 +2,7 @@
 require "rubygems"
 require "rake"
 require "rake/tasklib"
-require "colored"
+require "colorize"
 require "fileutils"
 #require 'mysql'
 #require 'jdbc-mysql'
@@ -121,7 +121,7 @@ end
 desc "Globally available task list"
 task :default do
   Rake.application.tasks.each do |task|
-    puts sprintf("%-25s : %s", task.name.bold.red, "")
+    puts sprintf("%-25s : %s", task.name.bold.red, task.name)
   end
 end
 
