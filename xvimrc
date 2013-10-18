@@ -1,0 +1,32 @@
+" Case-insensitive searching.
+set ignorecase
+
+" But case-sensitive if expression contains a capital letter.
+set smartcase
+
+" Default to global substitutions on lines
+set gdefault
+
+" Use the system pasteboard
+set pasteboard
+
+" Move between assistant editors
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+" Comment & uncomment
+nnoremap <Leader>c :xccmd commentAndUncommentCurrentLines<CR>
+
+" Edit in scope
+nnoremap <Leader>e :xccmd toggleTokenizedEditing<CR>
+
+" Open quickly
+nnoremap <C-p> :xccmd openQuickly<CR>
+
+" Indent selection
+nnoremap <Leader>i ==
+
+" Open navigator
+nnoremap <Leader>n :xccmd toggleNavigatorsVisibility<CR>

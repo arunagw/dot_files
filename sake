@@ -66,6 +66,16 @@ include FileUtils
 Rake.application.init("sake")
 
 desc "Push current branch"
+task :gfp do
+  branch_name = @git_help.current_branch
+  if branch_name == 'master'
+    abort("Abort!!! No force to master please!!")
+  end
+  puts "Force Pushing branch #{branch_name}"
+  system("git push origin #{branch_name} -u -v -f")
+end
+
+desc "Push current branch"
 task :gp do
   branch_name = @git_help.current_branch
   puts "Pushing branch #{branch_name}"

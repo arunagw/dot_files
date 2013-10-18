@@ -147,6 +147,7 @@ alias screen="screen -h 5000"
 alias ls="ls -G"
 
 export EDITOR="vim"
+export PGHOST=localhost
 
 # Happy open-ssl thingy
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
