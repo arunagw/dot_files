@@ -154,8 +154,11 @@ module Sake
   class Git
     def current_branch
       cmd_output = `git symbolic-ref HEAD`
-      branch_name = cmd_output.strip.split("/")[-1]
-      branch_name
+      cmd_output.strip.split("/")[-1]
+    end
+
+    def head_sha
+      `git rev-list --max-count=1 HEAD`.strip
     end
   end
   class Database

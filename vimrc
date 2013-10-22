@@ -32,6 +32,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
+Bundle 'danro/rename.vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'henrik/vim-open-url'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'kchmck/vim-coffee-script'
 Bundle "myusuf3/numbers.vim"
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/neocomplcache'
@@ -72,7 +77,8 @@ Bundle 'vim-scripts/ctags.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'xenoterracide/html.vim'
-Bundle 'zeis/vim-kolor'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/Auto-Pairs'
 
 filetype plugin indent on
 filetype plugin on
