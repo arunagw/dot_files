@@ -171,8 +171,15 @@ let g:html_indent_tags = 'li\|p'
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 
-" neocomplcache
-" let g:neocomplcache_enable_at_startup = 1
+" Neocomplcache options
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_max_list = 10
+let g:neocomplcache_auto_completion_start_length = 3
+let g:neocomplcache_force_overwrite_completefunc = 1
 
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown
