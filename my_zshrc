@@ -135,6 +135,7 @@ alias grst='git reset --hard HEAD'
 alias gf="git fetch"
 alias s="sake"
 alias be="bundle exec"
+alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
 
 alias todo='mvim /Users/arunagw/Dropbox-personal/Dropbox/todo.txt'
 alias ip="curl http://wtfismyip.com/json"
@@ -174,3 +175,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 eval "$(gh alias -s)"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /Users/arunagw/.travis/travis.sh ] && source /Users/arunagw/.travis/travis.sh
