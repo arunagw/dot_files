@@ -62,6 +62,6 @@
 [heroku]
   account = arunagw
 [mergetool]
-  keepBackup = true
+	keepBackup = true
 [help]
 	autocorrect = 1
