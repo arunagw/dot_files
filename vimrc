@@ -47,7 +47,6 @@ Bundle 'itspriddle/vim-marked'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'jtratner/vim-flavored-markdown'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
@@ -62,7 +61,6 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'shemerey/vim-peepopen'
 Bundle 'slim-template/vim-slim'
@@ -71,8 +69,6 @@ Bundle 'timcharper/textile.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -119,8 +115,15 @@ set list listchars=tab:»·,trail:·
 
 " Use Ag (https://github.com/ggreer/the_silver_searcher) instead of Grep when
 " available
-if executable("ag")
+if executable('ag')
+  " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
 endif
 
 
