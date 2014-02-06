@@ -119,11 +119,11 @@ fi
 
 # Aliases
 alias g='git'
-alias gst='git status'
+alias gst='git status -sb'
 alias gl='git pull'
 alias gup='git fetch && git rebase'
 alias gp='git push'
-alias gd='git diff | mate'
+alias gd='git diff | subl'
 alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
@@ -179,3 +179,19 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 eval "$(gh alias -s)"
 # added by travis gem
 [ -f /Users/arunagw/.travis/travis.sh ] && source /Users/arunagw/.travis/travis.sh
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export LANG=es_US.UTF-8
+export LC_NUMERIC=es_US
+export LC_TIME=es_US
+export LC_COLLATE=es_US.UTF-8
+export LC_MONETARY=es_US
+export LC_MESSAGES=es_US
+export LC_PAPER=es_US
+export LC_NAME=es_US
+export LC_ADDRESS=es_US
+export LC_TELEPHONE=es_US
+export LC_MEASUREMENT=es_US
+export LC_IDENTIFICATION=es_US

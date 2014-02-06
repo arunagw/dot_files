@@ -4,7 +4,7 @@ set vb
 " Color scheme
 syntax enable
 "  set background=light
-colorscheme railscasts
+colorscheme solarized
 
 " No toolbar
 set guioptions-=T
