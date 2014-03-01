@@ -138,7 +138,7 @@ alias be="bundle exec"
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
 
 alias todo='mvim /Users/arunagw/Dropbox-personal/Dropbox/todo.txt'
-alias ip="curl http://wtfismyip.com/json"
+alias ip='curl ipinfo.io'
 
 alias a='ls -lart'
 alias v='mvim .'
