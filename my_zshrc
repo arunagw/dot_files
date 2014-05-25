@@ -149,6 +149,7 @@ alias ..3="cd ../../.."
 alias r="rake"
 alias screen="screen -h 5000"
 alias ls="ls -G"
+alias away='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 export EDITOR="vim"
 export PGHOST=localhost

@@ -59,8 +59,6 @@
   trustExitCode = false
 [github]
   user = arunagw
-[heroku]
-  account = arunagw
 [mergetool]
 	keepBackup = true
 [help]
