@@ -32,11 +32,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
-Bundle 'Lokaltog/vim-powerline'
+
 Bundle 'Shougo/neocomplcache'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bigloser/vim-ruby-cute'
+Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'croaky/vim-colors-github'
@@ -55,6 +56,7 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'nanki/treetop.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nono/jquery.vim'
+Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'othree/html5.vim'
 Bundle 'pbrisbin/vim-mkdir'
 Bundle 'rizzatti/dash.vim'
@@ -135,7 +137,6 @@ set wildmode=longest,list
 " Splits
 set splitbelow
 set splitright
-
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
