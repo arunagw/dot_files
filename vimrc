@@ -186,12 +186,12 @@ let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 
 " Neocomplete options
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#max_list = 10
-let g:neocomplete#auto_completion_start_length = 3
-let g:neocomplete#force_overwrite_completefunc = 1
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_smart_case = 1
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
+" let g:neocomplete#max_list = 10
+" let g:neocomplete#auto_completion_start_length = 3
+" let g:neocomplete#force_overwrite_completefunc = 1
 
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown
