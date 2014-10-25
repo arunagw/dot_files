@@ -154,9 +154,6 @@ alias away='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 export EDITOR="vim"
 export PGHOST=localhost
 
-# Happy open-ssl thingy
-export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
-
 export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH
 alias ru='ps -ef | grep ruby'
 
