@@ -70,6 +70,7 @@ Plugin 'timcharper/textile.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-haml'
@@ -250,3 +251,4 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 colorscheme github
+inoremap <c-e> <c-o>A

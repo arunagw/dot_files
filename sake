@@ -72,7 +72,7 @@ task :gfp do
     abort("Abort!!! No force to master please!!")
   end
   puts "Force Pushing branch #{branch_name}"
-  system("git push origin #{branch_name} -u -v -f")
+  system("git push origin #{branch_name} -u -v --force-with-lease")
 end
 
 desc "Push current branch"

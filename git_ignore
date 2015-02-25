@@ -9,3 +9,5 @@ vendor/bundle
 .rbx
 .DS_Store
 .powenv
+.capistrano
+.bundle
