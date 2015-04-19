@@ -153,8 +153,8 @@ end
 module Sake
   class Git
     def current_branch
-      cmd_output = `git symbolic-ref HEAD`
-      cmd_output.strip.split("/")[-1]
+      cmd_output = `git symbolic-ref --short HEAD`
+      cmd_output.strip
     end
 
     def head_sha
