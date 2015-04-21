@@ -38,11 +38,11 @@ Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'croaky/vim-colors-github'
 Plugin 'danro/rename.vim'
-Plugin 'dsawardekar/ember.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'henrik/vim-open-url'
 Plugin 'itspriddle/vim-marked'
 Plugin 'jpo/vim-railscasts-theme'
+Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
@@ -85,6 +85,13 @@ Plugin 'vim-scripts/tComment'
 Plugin 'xenoterracide/html.vim'
 Plugin 'xolox/vim-misc'
 
+" EmberJS
+Plugin 'dsawardekar/ember.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+
+" Javascript
+Plugin 'pangloss/vim-javascript'
+
 call vundle#end()
 filetype plugin indent on
 filetype plugin on
@@ -125,6 +132,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Numbers
 set number
