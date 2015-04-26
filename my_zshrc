@@ -41,12 +41,12 @@ function precmd() {
 
   RPROMPT='$PR_RED$rvm_flag$PR_NO_COLOUR'
   if [[ $head_info =~ '^refs*' ]]; then
-    branch_name=$head_info[(ws:/:)-1]
+    branch_name=${head_info##refs/heads/}
     output=$(git diff-files --exit-code --quiet)
     if [[ $? == 0 ]]; then
-      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_CYAN>$PR_NO_COLOUR '
+      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_BLUE$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_CYAN>$PR_NO_COLOUR '
     else
-      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_MAGENTA*$PR_NO_COLOUR '
+      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_BLUE$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR$PR_MAGENTA*$PR_NO_COLOUR '
     fi
   else
     PROMPT='%2~~>'
@@ -58,6 +58,18 @@ function precmd() {
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt histignoredups
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE
+setopt HIST_NO_STORE
+setopt HIST_VERIFY
+setopt EXTENDED_HISTORY
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
 
 setopt hist_ignore_dups # ignore duplication command history list
 setopt share_history # share command history data
@@ -171,9 +183,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #export TORQUEBOX_HOME=/opt/torquebox
 #export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-
 eval "$(gh alias -s)"
 # added by travis gem
 [ -f /Users/arunagw/.travis/travis.sh ] && source /Users/arunagw/.travis/travis.sh
@@ -193,3 +202,10 @@ export LC_ADDRESS=es_US
 export LC_TELEPHONE=es_US
 export LC_MEASUREMENT=es_US
 export LC_IDENTIFICATION=es_US
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/arunagw/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
