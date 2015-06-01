@@ -223,6 +223,7 @@ nnoremap <F4> :NumbersOnOff<CR>
 map <leader>n :NERDTreeToggle<CR>
 
 " Open MarkedApp
+let g:marked_app = "Marked"
 map <leader>m :MarkedOpen<CR>
 
 " Fix the difficult-to-read default setting for diff text highlighting.  The
