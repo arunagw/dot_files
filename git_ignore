@@ -11,3 +11,4 @@ vendor/bundle
 .powenv
 .capistrano
 .bundle
+.sass-cache

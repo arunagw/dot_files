@@ -42,7 +42,6 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'henrik/vim-open-url'
 Plugin 'itspriddle/vim-marked'
 Plugin 'jpo/vim-railscasts-theme'
-Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
@@ -132,7 +131,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Numbers
 set number
