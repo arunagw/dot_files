@@ -38,6 +38,7 @@
 [user]
 	name = Arun Agrawal
 	email = arunagw@gmail.com
+	signingkey = 28523D00
 [mergetool "diffmerge"]
   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
   trustExitCode = false
@@ -53,3 +54,7 @@
 	account = arunagw
 [init]
 	templatedir = ~/.git_template
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
