@@ -209,3 +209,5 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/arunagw/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
