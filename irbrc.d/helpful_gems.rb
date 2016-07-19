@@ -1,4 +1,4 @@
-%w[rubygems looksee/shortcuts wirble redgreen].each do |gem|
+%w[rubygems looksee wirble redgreen].each do |gem|
 	begin
 		require gem
 	rescue LoadError

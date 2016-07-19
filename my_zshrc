@@ -53,6 +53,26 @@ function precmd() {
   fi
 }
 
+
+xsource() {
+    if (( ${#argv} < 1 )) ; then
+        printf 'usage: xsource FILE(s)...\n' >&2
+        return 1
+    fi
+
+    while (( ${#argv} > 0 )) ; do
+        [[ -r "$1" ]] && source "$1"
+        shift
+    done
+    return 0
+}
+
+function zrclocal() {
+    xsource "/etc/zsh/zshrc.local"
+    xsource "${HOME}/.zshrc.local"
+    return 0
+}
+
 #history stuff
 ## Command history configuration
 HISTFILE=$HOME/.zsh_history
@@ -203,6 +223,8 @@ export LC_TELEPHONE=es_US
 export LC_MEASUREMENT=es_US
 export LC_IDENTIFICATION=es_US
 
+export GOPATH=$HOME/go-code
+export PATH=$PATH:$GOPATH/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export DOCKER_HOST=tcp://192.168.59.103:2376
@@ -212,3 +234,5 @@ export DOCKER_TLS_VERIFY=1
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(rbenv init -)"
+
+zrclocal

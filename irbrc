@@ -1,5 +1,3 @@
-# Prompt behavior
-ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
 # History
 require 'irb/ext/save-history'

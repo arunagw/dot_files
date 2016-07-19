@@ -38,6 +38,7 @@ Plugin 'bling/vim-airline'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'croaky/vim-colors-github'
 Plugin 'danro/rename.vim'
+Plugin 'fatih/vim-go'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'henrik/vim-open-url'
 Plugin 'itspriddle/vim-marked'
@@ -219,10 +220,6 @@ nnoremap <F4> :NumbersOnOff<CR>
 
 " NERDTree for projects
 map <leader>n :NERDTreeToggle<CR>
-
-" Open MarkedApp
-let g:marked_app = "Marked"
-map <leader>m :MarkedOpen<CR>
 
 " Fix the difficult-to-read default setting for diff text highlighting.  The
 " " bang (!) is required since we are overwriting the DiffText setting. The
