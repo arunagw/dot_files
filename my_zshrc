@@ -169,8 +169,8 @@ alias s="sake"
 alias be="bundle exec"
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
 
-alias todo='mvim /Users/arunagw/Dropbox-personal/Dropbox/todo.txt'
-alias ip='curl ipinfo.io/json'
+alias ip='curl -s ipinfo.io/json | jq'
+alias dns='curl -sL http://edns.ip-api.com/json | jq'
 
 alias a='ls -lart'
 alias v='mvim .'
@@ -203,7 +203,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 #export TORQUEBOX_HOME=/opt/torquebox
 #export JBOSS_HOME=$TORQUEBOX_HOME/jboss
 
-eval "$(gh alias -s)"
 # added by travis gem
 [ -f /Users/arunagw/.travis/travis.sh ] && source /Users/arunagw/.travis/travis.sh
 
@@ -230,9 +229,13 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/arunagw/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+export DISABLE_SPRING=true
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval "$(hub alias -s)"
 eval "$(rbenv init -)"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 zrclocal
