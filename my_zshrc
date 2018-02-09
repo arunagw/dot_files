@@ -169,7 +169,7 @@ alias s="sake"
 alias be="bundle exec"
 alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare'
 
-alias ip='curl -s ipinfo.io/json | jq'
+alias ip='curl -s http://ip-api.com/json | jq'
 alias dns='curl -sL http://edns.ip-api.com/json | jq'
 
 alias a='ls -lart'
