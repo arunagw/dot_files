@@ -178,7 +178,7 @@ alias bu='brew update && brew upgrade && brew cleanup'
 alias psr="ps axu|grep ruby"
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
-alias r="rake"
+alias r="bundle exec rake"
 alias screen="screen -h 5000"
 alias ls="ls -G"
 alias away='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
@@ -187,7 +187,6 @@ export EDITOR="vim"
 export PGHOST=localhost
 
 export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH
-alias ru='ps -ef | grep ruby'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
