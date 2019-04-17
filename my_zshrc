@@ -230,6 +230,8 @@ export DOCKER_CERT_PATH=/Users/arunagw/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 export DISABLE_SPRING=true
 
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(hub alias -s)"
