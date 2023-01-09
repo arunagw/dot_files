@@ -60,3 +60,5 @@
 	required = true
 [push]
 	default = matching
+[credential]
+	helper = cache --timeout=600

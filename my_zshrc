@@ -190,21 +190,6 @@ export PATH=/usr/local/bin:$HOME/bin:/usr/local/sbin:$PATH
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-#export JRUBY_OPTS=--1.9
-
-# Oracle specific
-#export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
-#export SQLPATH="/usr/local/oracle/instantclient_10_2"
-#export TNS_ADMIN="/usr/local/oracle/network/admin"
-#export NLS_LANG="AMERICAN_AMERICA.UTF8"
-#export PATH=$PATH:$DYLD_LIBRARY_PATH
-
-#export TORQUEBOX_HOME=/opt/torquebox
-#export JBOSS_HOME=$TORQUEBOX_HOME/jboss
-
-# added by travis gem
-[ -f /Users/arunagw/.travis/travis.sh ] && source /Users/arunagw/.travis/travis.sh
-
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -225,9 +210,6 @@ export GOPATH=$HOME/go-code
 export PATH=$PATH:$GOPATH/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/arunagw/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
 export DISABLE_SPRING=true
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
@@ -237,6 +219,11 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 zrclocal
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+TFENV_ARCH=amd64
